@@ -15,6 +15,7 @@ func main() {
 	mux := http.NewServeMux() //@future replace with https://github.com/gorilla/mux
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Server", "rmgo")
+		w.Header().Set("X-Powered-By", "Jevin")
 		w.Write([]byte(message))
 	})
 
